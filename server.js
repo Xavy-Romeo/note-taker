@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3111;
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
-// instantiate the server
+// start the server
 const app = express();
 
 // Express middleware
@@ -14,11 +14,13 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 // parse incoming JSON data
 app.use(express.json());
+// use files in public folder
+app.use(express.static('public'));
 
 // use apiRoutes
 app.use('/api', apiRoutes);
 // use htmlRoutes
-// app.use('/', htmlRoutes);
+app.use('/', htmlRoutes);
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);

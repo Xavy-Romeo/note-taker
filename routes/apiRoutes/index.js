@@ -1,6 +1,5 @@
 const router = require('express').Router();
 
-
 // get all notes route
 router.get('/notes', (req, res) => {
     res.json({
@@ -22,10 +21,10 @@ router.post('/notes', (req, res) => {
     })
 });
 
-// Defaut response for requests (Not Found)
-router.use((req, res) => {
-    res.status(404).end();
-});
+// // Defaut response for requests (Not Found)
+// router.use((req, res) => {
+//     res.status(404).end();
+// });
 
 
 
