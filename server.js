@@ -19,7 +19,10 @@ app.get('/', (req, res) => {
     });
 });
 
-
+// Defaut response for requests (Not Found)
+app.use((req, res) => {
+    res.status(404).end();
+});
 
 
 
