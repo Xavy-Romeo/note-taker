@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const {findById, createNewNote} = require('../../lib/notes');
+const {findById, createNewNote, validateNote} = require('../../lib/notes');
 const { notes } = require('../../db/db.json');
 
 // get all notes route
@@ -25,10 +25,16 @@ router.post('/notes', (req, res) => {
     // set random id to each new note
     req.body.id = (Math.floor((Math.random()*1000000000000000))).toString();
     
-    // add note to db.json and notes array 
-    const note = createNewNote(req.body, notes);
+    // if data in body is missing or in incorrect format send 400 err
+    if (!validateNote(req.body)) {
+        res.status(400).send('The note is not properly formatted');
+    }
+    else {
+        // add note to db.json and notes array 
+        const note = createNewNote(req.body, notes);
 
-    res.json(note);
+        res.json(note);
+    }
 });
 
 // // delete route
