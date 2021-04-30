@@ -1,25 +1,14 @@
 {
   "notes": [
     {
-      "id": "1",
-      "title": "Test Title",
-      "text": "Test text"
+      "title": "Sample Note 1",
+      "text": "This is sample note 1.",
+      "id": "379537609423567"
     },
     {
-      "title": "test111",
-      "text": "testNew",
-      "id": "106902932439684"
-    },
-    {
-      "title": "afafas",
-      "text": "fsf",
-      "id": "835169379256940"
-    },
-    {
-      "title": "aS",
-      "text": "ASF",
-      "id": "540420294891281"
+      "title": "Sample Note 2",
+      "text": "This is sample note 2.",
+      "id": "946881070844127"
     }
- 
   ]
 }
